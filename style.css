@@ -11,7 +11,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	padding: 10px;
-	min-height: 100vh;
+
 }
 
 p {
@@ -46,7 +46,7 @@ input[type=checkbox] {
 	padding: 12px 10px;
 	height: 50px;
     width: 100%;
-    font: color: #ffffff;
+    font: color #ffffff;
 }
 
 .result-container #result {
@@ -63,18 +63,20 @@ input[type=checkbox] {
 	width: 40px;
 }
 
-.generate {
+.result {
 	border: none;
 	color: #fff;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 20px;
 	padding: 8px 12px;
 	background-color: #3B3B98;
 }
 
 .generate-button {
 	display: block;
-	width: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .setting {
