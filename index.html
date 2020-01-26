@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 
     <title>Password Generator</title>
@@ -12,36 +14,39 @@
 
 <body>
     <div class="container">
-        <h2>Password Generator</h2>
-        <div class="result-container">
-            <span id="result"></span>
-            <button class="btn" id="clipboard">
-                <i class="far fa-clipboard"></i>
-            </button>
+        <h2>Create Your Password</h2>
+        <div class="row">
+            <div class="col-8">
+                How many characters?
+            </div>
+            <div class="col-4">
+                <input type="number" id="inputVal" value="15" min="8" max="128">
+            </div>
         </div>
-        <div class="setting">
-            <label>Password Length</label>
-            <input type="number" id="length" min='4' max='20' value='20' />
+        <div class="row">
+            <div class="col-6">
+                Number:
+                <input type="checkbox" id="numCheck" unchecked>
+            </div>
+            <div class="col-6">
+                Symbol:
+                <input type="checkbox" id="symCheck" unchecked>
+            </div>
         </div>
-        <div class="setting">
-            <label>Include uppercase letters</label>
-            <input type="checkbox" id="uppercase" checked />
+        <div class="row">
+            <button class="submitBtn" id="submitBtn" type="button"></button>
         </div>
-        <div class="setting">
-            <label>Include lowercase letters</label>
-            <input type="checkbox" id="lowercase" checked />
+        <div class="row">
+            <div class="col-3">
+                Your Password:
+            </div>
+            <div class="col-8">
+                <input type="text" id="password" name="result">
+                <button class="btn" id="clipboard">
+                    <i class="far fa-clipboard"></i>
+                </button>
+            </div>
         </div>
-        <div class="setting">
-            <label>Include Numbers</label>
-            <input type="checkbox" id="number" checked />
-        </div>
-        <div class="setting">
-            <label>Include Symbols</label>
-            <input type="checkbox" id="symbols" checked />
-        </div>
-        <button class="generate-button" id="generate">
-            Generate Password
-        </button>
     </div>
 
 
