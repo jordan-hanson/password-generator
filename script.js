@@ -20,7 +20,8 @@ function passwordGen(length = 15) {
 window.onload = function () {
     var generateButton = document.querySelector('#submitBtn');
     generateButton.addEventListener('click', function () {
-        document.querySelector('#password').value = passwordGen();
+        var newLength = document.querySelector("#inputVal").value;
+        document.querySelector('#password').value = passwordGen(parseInt(newLength));
     });
 }
 
