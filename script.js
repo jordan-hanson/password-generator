@@ -1,27 +1,34 @@
-var character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var number = '0123456789';
-var symbol = '~!@#$%^&*()<>?';
+//Function to generate the password
+function passwordGen(length = 15) {
+    //Variables
+    var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+    var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var symbols = '!@#$%^&*()<>?,./';
+    var numbers = '0123456789';
+    var all = lowerCase + upperCase + symbols + numbers;
 
-var inputVal = document.getElementById('inputVal');
-var numCheck = document.getElementById('numCheck');
-var symCheck = document.getElementById('symCheck');
-var submitBtn = document.getElementById('submitBtn');
-var password = document.getElementById('password')
-
-function password(length, characters) {
-    var pswrd = '';
+    var password = '';
     for (var i = 0; i < length; i++) {
-        pswrd += characters.charAt(Math.floor(Math.random() * characters.length));
+        var character = Math.floor(Math.random() * all.length);
+        password += all.substring(character, character + 1);
     }
-    return pswrd;
+
+    return password;
+};
+
+//My onload function to generate the button when clicked.
+window.onload = function () {
+    var generateButton = document.querySelector('#submitBtn');
+    generateButton.addEventListener('click', function () {
+        document.querySelector('#password').value = passwordGen();
+    });
 }
 
-submitBtn.addEventListener("click", function () {
-    var characters = character;
-    (numCheck.checked) ? characters += number : '';
-    (symCheck.checked) ? characters += symbol : '';
-    password.value = (inputVal.value, characters);
-});
+passwordGen();
 
+//This is my clear out function to clear the input field
+function clearBtn() {
+    document.getElementById("password").value = "";
+}
 
-console.log(password)
+clearBtn();

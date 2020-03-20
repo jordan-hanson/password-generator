@@ -14,8 +14,8 @@
 
 <body>
     <div class="container">
-        <h2>Create Your Password</h2>
-        <div class="row">
+        <h2>Generate a Password</h2>
+        <div class="row" style="padding-bottom: 5px;">
             <div class="col-8">
                 How many characters?
             </div>
@@ -25,33 +25,24 @@
         </div>
         <div class="row">
             <div class="col-6">
-                Number:
-                <input type="checkbox" id="numCheck" unchecked>
+                <button id="submitBtn" type="button">Get Password</button>
             </div>
             <div class="col-6">
-                Symbol:
-                <input type="checkbox" id="symCheck" unchecked>
+                <button id="clearBtn" type="button" onclick="clearBtn();">Clear Out</button>
             </div>
-        </div>
-        <div class="row">
-            <button class="submitBtn" id="submitBtn" type="button"></button>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                Your Password:
-            </div>
-            <div class="col-8">
-                <input type="text" id="password" name="result">
-                <button class="btn" id="clipboard">
-                    <i class="far fa-clipboard"></i>
-                </button>
+            <div class="row">
+                <div class="col-12" style="padding-left: 20px; padding-top: 5px;" ;>
+                    <input id="password" type="text" placeholder="Your password is" style="width: 330px">
+                </div>
             </div>
         </div>
     </div>
 
 
     <script src="./script.js"></script>
-
+    <script>
+        <button onclick="document.getElementById('password').value = ''"> Clear Input Field </button>
+    </script>
 </body>
 
 </html>
